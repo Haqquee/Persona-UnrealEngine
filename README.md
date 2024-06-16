@@ -10,11 +10,31 @@ This project is divided into two parts. The first is a generative AI application
 ### Unreal Engine
 The second part of this project deals with Unreal Engine. A custom component called Persona Component is created using C++ within the engine. This component can be attached to any character or actor within the game-world (in Unreal Engine an actor is any object that can be placed into a level). The Persona component allows the user to give a character their own unique background, and the component contains necessary functions that allow for the character to interact with the game world with the use of LLM generated responses. It does this by communicating with the API that was created in the first part. The help of LangChain allows for these interactions to be stored in a memory archive for each individual character, so that they remember previous conversations and any useful data.
 
+### Key Directories and Files
+
+- **root/**: Project root
+  - `app.py`: The main FastAPI application file.
+  - `model.py`: Initializes the LLM used for the application (The API key is loaded here)
+  - `persona_memory.py`: Custom memory class used for this project
+  - `prompt_template.py`: Customizable prompt template to structure LLM's responses
+
+- **PersonaComponent_UE/**: Contains the standalone Persona Component (Can be included in your own UE project)
+  - `PersonaComponent.h`: Header file for the Persona Component in Unreal Engine.
+  - `PersonaComponent.cpp`: Source file for the Persona Component in Unreal Engine.
+
+- **DemoProjectFiles/**: Contains the Demo/Sample project files for Unreal Engine
+  - `PersonaDemo.uproject`: Unreal Engine project file for the demo (This can be opened using Unreal Engine to run the demo).
+  - `Content/`: Directory for Unreal Engine content assets.
+  - `Config/`: Configuration files for the Unreal Engine project.
+  - `Source/`: Source code for the Unreal Engine project.
+
 ## Installation (Windows only)
 This repository contains:
 - All the necessary files to run the local API for LLM inference.
 - Persona component header and .cpp files for Unreal Engine (created and tested in UE 5.4).
 - A demo Unreal Engine project that demonstrates the Persona Component and its current capabilities right out of the box.
+
+
 
 ### 1. Clone the Repository
 
@@ -30,7 +50,7 @@ pip install -r requirements.txt
 ```
 
 ### 3. Setup Environment Variables for LLM:
-Create a .env file in the project root and add in NVIDIA NIM API key.
+Create a .env file in the project root and add in NVIDIA NIM API key, or directly add the key in ```model.py```.
 
 ```
 NVIDIA_API_KEY=your_nvidia_api_key
@@ -94,7 +114,7 @@ DELETE /delete_persona
 </details>
 
 ### 5. Connecting to Unreal Engine:
-If you do not have development experience with Unreal Engine or you want to just test the component, it is recommended to move on to the [Demo Project Section](#7-demo-project) which provides steps to use the demo project. Otherwise, follow the following steps to set it up for your own project:
+If you do not have development experience with Unreal Engine or you want to just test the component, it is recommended to move on to the [Demo Project Section](#7-demo-project) which provides steps to use the demo project. Otherwise, here are the  steps to set it up for your own project:
 
 <details>
 <summary>Initialize the Persona Component for your own UE Project:</summary>
@@ -156,14 +176,11 @@ void UExampleUIClass::HandleMessage(const FString& Message)
 A demo Unreal Engine project is included in this repository to give an example on how the Persona Component can be used. It sets up blueprints for the  Player, NPCs, UI along with the necessary functions for interactions between the Player and the Persona.
 1. If you do not have Unreal Engine 5.4, it can be downloaded for free through the [Epic Games Launcher](https://www.unrealengine.com/en-US/download). To use Unreal Engine there are Hardware and Software requirements and prerequisites, see the [Hardware and Software Specifications for UE](https://dev.epicgames.com/documentation/en-us/unreal-engine/hardware-and-software-specifications-for-unreal-engine).
 2. Launch Unreal Engine, which will open the project browser. On the bottom right, click the 'browse' button, to find and open the Unreal Engine Project file ```NPC_Chatbot_Demo``` included in this repository.
-3. Given you have all the prerequisites mentioned in step 1, the project should start to compile (it may take a couple of minutes depending on hardware).
+3. Given you have all the prerequisites mentioned in step 1, the project should start to compile (it may take a couple of minutes depending on hardware). If prompted, accept the rebuild option.
 4. Once the project is opened, you can play the level in the editor.
 - Use ```W```, ```A```, ```S```, ```D``` to move the player, and ```Space``` to jump.
 - Hold ```E``` to interact with an NPC that has a Persona.
 - Type text into the chatbox and press enter to chat with the Character.
-
-### Requirements
-
 
 ## Generative AI Agents Developer Contest by NVIDIA and LangChain
 This project was initially developed for the [Generative AI Agents Developer Contest by NVIDIA and LangChain](https://www.nvidia.com/en-us/ai-data-science/generative-ai/developer-contest-with-langchain/). It was a fun project to put together for the contest, however there are limitations and many improvements are to be made in the future.
