@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "NPC_Chatbot_Demo",
+			"Path": "..\\Source\\NPC_Chatbot_Demo.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "NPC_Chatbot_DemoEditor",
+			"Path": "..\\Source\\NPC_Chatbot_DemoEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
