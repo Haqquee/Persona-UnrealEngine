@@ -1,7 +1,6 @@
 import os
 import json
 from model import model
-from langchain_community.llms import Ollama
 from langchain.chains import LLMChain
 from langchain.memory.buffer import ConversationBufferMemory
 from persona_memory import PersonaMemory

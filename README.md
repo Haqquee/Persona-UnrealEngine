@@ -10,7 +10,7 @@ This project is divided into two parts. The first is a generative AI application
 ### Unreal Engine
 The second part of this project deals with Unreal Engine. A custom component called Persona Component is created using C++ within the engine. This component can be attached to any character or actor within the game-world (in Unreal Engine an actor is any object that can be placed into a level). The Persona component allows the user to give a character their own unique background, and the component contains necessary functions that allow for the character to interact with the game world with the use of LLM generated responses. It does this by communicating with the API that was created in the first part. The help of LangChain allows for these interactions to be stored in a memory archive for each individual character, so that they remember previous conversations and any useful data.
 
-## Installation
+## Installation (Windows only)
 This repository contains:
 - All the necessary files to run the local API for LLM inference.
 - Persona component header and .cpp files for Unreal Engine (created and tested in UE 5.4).
