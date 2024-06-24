@@ -5,10 +5,10 @@
 
 ## How it Works
 ### NVIDIA and LangChain
-This project is divided into two parts. The first is a generative AI application that uses LangChain and Mixtral-8x22b-Instruct-v0.1 LLM, hosted on NVIDIA NIM, to allow for the creation of Personas that can be chatted with seamlessly. This application takes the poweful tools provided by LangChain to setup conversation chains that helps structure the conversation based on the given input. A custom prompt template is defined to structure the input for the language model. Additionally, a custom memory class is extendended from LangChain's existing 'ConversationBufferMemory' class, to provide memory storage, where memory can be written to and loaded from files, allowing for consistent interactions across sessions. This application can be interacted with through a local API built using FastAPI.
+This project is divided into two parts. The first is a generative AI application that uses LangChain and Mixtral-8x22b-Instruct-v0.1 LLM, hosted on NVIDIA NIM, to allow for the creation of Personas that can be chatted with seamlessly. This application takes the powerful tools provided by LangChain to setup conversation chains that help structure the conversation based on the given input. A custom prompt template is defined to structure the input for the language model. Additionally, a custom memory class is extendend from LangChain's existing 'ConversationBufferMemory' class, to provide memory storage, where memory can be written to and loaded from files, allowing for consistent interactions across sessions. This application can be interacted with through a local API built using FastAPI.
 
 ### Unreal Engine
-The second part of this project deals with Unreal Engine. A custom component called Persona Component is created using C++ within the engine. This component can be attached to any character or actor within the game-world (in Unreal Engine an actor is any object that can be placed into a level). The Persona component allows the user to give a character their own unique background, and the component contains necessary functions that allow for the character to interact with the game world with the use of LLM generated responses. It does this by communicating with the API that was created in the first part. The help of LangChain allows for these interactions to be stored in a memory archive for each individual character, so that they remember previous conversations and any useful data.
+The second part of this project deals with Unreal Engine. A custom component called Persona Component is created using C++ within the engine. This component can be attached to any character or actor within the game-world (in Unreal Engine an actor is any object that can be placed into a level). The Persona component allows the user to give a character their own unique background, and the component contains necessary functions that allow for the character to interact with the game world with the use of LLM-generated responses. It does this by communicating with the API that was created in the first part. The help of LangChain allows for these interactions to be stored in a memory archive for each individual character so that they remember previous conversations and any useful data.
 
 ### Key Directories and Files
 
@@ -65,7 +65,7 @@ NVIDIA NIM is a part of NVIDIA AI Enterprise. If you do not have access to the A
 fastapi run main.py
 ```
 
-Once the API is up and running, it is possible to start interacting with it outisde of Unreal Engine by sending HTTP requests.
+Once the API is up and running, it is possible to start interacting with it outside of Unreal Engine by sending HTTP requests.
 
 <details>
 <summary>API Endpoints:</summary>
@@ -183,8 +183,8 @@ A demo Unreal Engine project is included in this repository to give an example o
 - Type text into the chatbox and press enter to chat with the Character.
 
 ## Generative AI Agents Developer Contest by NVIDIA and LangChain
-This project was initially developed for the [Generative AI Agents Developer Contest by NVIDIA and LangChain](https://www.nvidia.com/en-us/ai-data-science/generative-ai/developer-contest-with-langchain/). It was a fun project to put together for the contest, however there are limitations and many improvements are to be made in the future.
+This project was initially developed for the [Generative AI Agents Developer Contest by NVIDIA and LangChain](https://www.nvidia.com/en-us/ai-data-science/generative-ai/developer-contest-with-langchain/). It was a fun project to put together for the contest, however, there are limitations and many improvements are to be made in the future.
 
 ## Current Limitations and Future Improvements
-- During the time I had to do this project, I tried my best to make the setup as simple as I could, however, it still takes more steps than I would like for it to. It may be possible to simplify the steps and write a more cohesive documentation on how to use the Project with Unreal Engine. This will also give beginners of Unreal Engine and game devlopment, a better idea on how to use this component.
-- The chat system used for this project, can be updated using [NVIDIA's NeMo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop), to further control the output of the LLM for the characters in game.
+- During the time I had to do this project, I tried my best to make the setup as simple as I could, however, it still takes more steps than I would like for it to. It may be possible to simplify the steps and write a more cohesive documentation on how to use the Project with Unreal Engine. This will also give beginners of Unreal Engine and game development, a better idea on how to use this component.
+- The chat system used for this project can be updated using [NVIDIA's NeMo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails/tree/develop), to further control the output of the LLM for the characters in the game.
