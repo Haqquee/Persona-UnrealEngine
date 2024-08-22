@@ -1,5 +1,8 @@
 # Persona-UnrealEngine
 
+## Generative AI Agents Developer Contest by NVIDIA and LangChain
+This project was initially developed for the Generative AI Agents Developer Contest by NVIDIA and LangChain. It received an honorable mention and was among the top 10 projects for the competition; [list of all the winners](https://www.nvidia.com/en-us/ai-data-science/generative-ai/developer-contest-with-langchain/). 
+
 ## Introduction
 **Persona** is a project developed with the aim to integrate Large-Language-Models and Unreal Engine, to power dynamic and immersive dialogues for characters in video games, without the need to create complex dialogue trees. At its core, Persona is an Unreal Engine component that can be attached to any actor within the game world. The component can then communicate with an LLM that is optimized and accelerated by NVIDIA and customized using the LangChain Framework. 
 
@@ -181,9 +184,6 @@ A demo Unreal Engine project is included in this repository to give an example o
 - Use ```W```, ```A```, ```S```, ```D``` to move the player, and ```Space``` to jump.
 - Hold ```E``` to interact with an NPC that has a Persona.
 - Type text into the chatbox and press enter to chat with the Character.
-
-## Generative AI Agents Developer Contest by NVIDIA and LangChain
-This project was initially developed for the [Generative AI Agents Developer Contest by NVIDIA and LangChain](https://www.nvidia.com/en-us/ai-data-science/generative-ai/developer-contest-with-langchain/). It was a fun project to put together for the contest, however, there are limitations and many improvements are to be made in the future.
 
 ## Current Limitations and Future Improvements
 - During the time I had to do this project, I tried my best to make the setup as simple as I could, however, it still takes more steps than I would like for it to. It may be possible to simplify the steps and write a more cohesive documentation on how to use the Project with Unreal Engine. This will also give beginners of Unreal Engine and game development, a better idea on how to use this component.
